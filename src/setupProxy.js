@@ -1,9 +1,7 @@
 const proxy = require('http-proxy-middleware');
 
 module.exports = function(app) {
-    app.use(proxy('/_api', { target: 'https://student.geschool.net' }));
-    app.use(proxy('/p/', { target: 'https://student.geschool.net' }));
-    app.use(proxy('/r3/', { target: 'https://student.geschool.net' }));
+    app.use(proxy('/_api', { target: 'https://student.geschool.net', changeOrigin: true }));
 };
 
 // module.exports = function(app) {
